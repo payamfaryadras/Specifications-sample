@@ -19,5 +19,8 @@ open class Phone {
     @Column("number")
     protected var number: String? = null
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id")
+    private lateinit var user: User
 
 }

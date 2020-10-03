@@ -2,6 +2,7 @@ package com.payam.learn.entity
 
 import javax.persistence.*
 
+
 @Entity
 @Table(name = "tbl_user")
 open class User {
@@ -12,13 +13,10 @@ open class User {
     protected var id: Long = 0;
 
     @Column(name = "name", nullable = true, length = 50)
-    protected var name: String? = null
+    var name: String? = null
 
     @Column(name = "family", nullable = true, length = 100)
-    protected var family: String? = null
+     var family: String? = null
 
-    @OneToMany(cascade = arrayOf(CascadeType.ALL), fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_phone")
-    lateinit var phones: Set<Phone>
 
 }
