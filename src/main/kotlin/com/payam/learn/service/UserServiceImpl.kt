@@ -19,6 +19,7 @@ class UserServiceImpl @Autowired constructor(private val repository: UserReposit
             UserDTO.Detail().apply {
                 this.name = item.name!!
                 this.family = item.family
+                this.addresses = item.adresses
             }
         }
         return UserDTO().apply {

@@ -1,7 +1,7 @@
 package com.payam.learn.repository
 
-import com.payam.learn.entity.Phone
+import com.payam.learn.entity.Address
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface PhoneRepository :JpaRepository<Phone,Long> {
+interface AddressRepository :JpaRepository<Address,Long> {
 }

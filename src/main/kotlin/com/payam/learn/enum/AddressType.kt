@@ -1,7 +1,6 @@
 package com.payam.learn.enum
 
-enum class PhoneType {
+enum class AddressType {
     Home,
-    Cell,
     Work
 }

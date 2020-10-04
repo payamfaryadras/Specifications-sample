@@ -1,6 +1,7 @@
 package com.payam.learn.model
 
-import com.payam.learn.enum.PhoneType
+import com.payam.learn.entity.Address
+import com.payam.learn.enum.AddressType
 
 class UserDTO() {
     var totalCount: Int? = 0
@@ -10,7 +11,7 @@ class UserDTO() {
     class Detail {
         var name: String? = null
         var family: String? = null
-        var phone: PhoneType? = null
+        var addresses: Set<Address>? = null
     }
 
 }
