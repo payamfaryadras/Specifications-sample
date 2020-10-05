@@ -1,9 +1,10 @@
-package com.payam.learn.repositoryPage
+package com.payam.learn.specjpa.dynamicquery.repository
 
-import com.payam.learn.entity.Address
-import com.payam.learn.entity.User
-import com.payam.learn.enum.AddressType
-import com.payam.learn.model.UserFilter
+
+import com.payam.learn.specjpa.dynamicquery.entity.Address
+import com.payam.learn.specjpa.dynamicquery.entity.User
+import com.payam.learn.specjpa.dynamicquery.enum.AddressType
+import com.payam.learn.specjpa.dynamicquery.model.UserFilter
 import org.springframework.data.jpa.domain.Specification
 import javax.persistence.criteria.*
 
@@ -17,7 +18,7 @@ class UserSpec(private final var filter: UserFilter) : Specification<User> {
         if (filter.address != null) predicates.plus(criteriaBuilder.equal(joinParent.get<AddressType>("addressType"), filter.address));
         if (predicates.isEmpty())
             return null
-        val res:Array<Predicate> = predicates.toTypedArray()
+        val res: Array<Predicate> = predicates.toTypedArray()
         return criteriaBuilder.and(*res)
     }
 }

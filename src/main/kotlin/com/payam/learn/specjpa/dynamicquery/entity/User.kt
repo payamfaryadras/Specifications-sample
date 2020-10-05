@@ -1,11 +1,11 @@
-package com.payam.learn.entity
+package com.payam.learn.specjpa.dynamicquery.entity
 
 import javax.persistence.*
 
 
 @Entity
 @Table(name = "tbl_user")
-open class User {
+ class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
@@ -19,6 +19,6 @@ open class User {
     var family: String? = null
 
     @OneToMany(cascade = arrayOf(CascadeType.ALL))
-    @JoinTable(name="user_address")
+    @JoinTable(name = "user_address")
     lateinit var adresses: Set<Address>
 }
