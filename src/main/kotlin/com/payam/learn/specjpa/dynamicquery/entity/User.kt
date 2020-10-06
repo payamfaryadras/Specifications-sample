@@ -20,5 +20,5 @@ import javax.persistence.*
 
     @OneToMany(cascade = arrayOf(CascadeType.ALL))
     @JoinTable(name = "user_address")
-    lateinit var adresses: Set<Address>
+    lateinit var addresses: Set<Address>
 }

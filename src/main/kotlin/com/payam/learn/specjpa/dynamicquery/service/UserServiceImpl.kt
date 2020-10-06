@@ -16,13 +16,13 @@ import org.springframework.stereotype.Service
 class UserServiceImpl(private val userRepository: UserRepository, private val addressRepository: AddressRepository) : UserService {
     override fun search(filter: UserFilter): UserDTO {
         val spec = UserSpec(filter)
-        val userDetails = userRepository.findAll(spec, PageRequest.of(filter.currentPage!!, filter.pageSize!!, Sort.Direction.ASC))
+        val userDetails = userRepository.findAll(spec, PageRequest.of(filter.currentPage!!, filter.pageSize!!, Sort.Direction.ASC,"name"))
 
         val details = userDetails.map { item ->
             UserDTO.Detail().apply {
                 this.name = item.name!!
                 this.family = item.family
-                this.addresses = item.adresses
+                this.addresses = item.addresses
             }
         }
         return UserDTO().apply {
@@ -43,7 +43,7 @@ class UserServiceImpl(private val userRepository: UserRepository, private val ad
             this.description = "desc1"
             this.addressType = AddressType.Home
         })
-        user1.adresses = mutableSetOf(address1)
+        user1.addresses = mutableSetOf(address1)
         userRepository.save(user1)
     }
 
