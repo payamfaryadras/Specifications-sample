@@ -1,9 +1,10 @@
 package com.payam.learn.specjpa.dynamicquery.model
 
 import com.payam.learn.specjpa.dynamicquery.entity.Address
+import java.io.Serializable
 
 
-class UserDTO() {
+class UserDTO():Serializable {
     var totalCount: Int? = 0
     var currentPage: Int? = 0
     var pageSize: Int? = 0
